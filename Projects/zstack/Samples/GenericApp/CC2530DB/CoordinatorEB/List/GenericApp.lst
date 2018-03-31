@@ -1,0 +1,610 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         28/Jul/2014  16:04:40 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\Source\GenericApp.c     #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2530DB\..\..\..\T #
+#                          ools\CC2530DB\f8wCoord.cfg" (-DCPU32MHZ            #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2530DB\..\..\..\T #
+#                          ools\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO          #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\Source\GenericApp.c" -D          #
+#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
+#                          -D LCD_SUPPORTED=DEBUG -lC "C:\Texas               #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\CoordinatorEB\List\"    #
+#                          -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\GenericApp\CC2530DB\Coordinat #
+#                          orEB\List\" --diag_suppress Pe001,Pa010 -o         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB #
+#                          \Obj\" -e --no_code_motion --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\Source\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMai #
+#                          n\TI2530DB\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\hal\include\" -I "C:\Texas                      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\hal\target\CC2530EB\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\mac\include\" -I "C:\Texas                      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\mac\high_level\" -I "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\mac\low_level\srf04\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\mac\low_level\srf04\single_chip\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5 #
+#                          .1a\Projects\zstack\Samples\GenericApp\CC2530DB\.. #
+#                          \..\..\..\..\Components\osal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\. #
+#                          .\Components\services\saddr\" -I "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\services\sdata\" -I "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\stack\af\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\stack\nwk\" -I "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\stack\sapi\" -I "C:\Texas                       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\stack\sec\" -I "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\stack\sys\" -I "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\stack\zdo\" -I "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\GenericApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\zmac\f8w\" -Ohz          #
+#                          --require_prototypes                               #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\ #
+#                          List\GenericApp.lst                                #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\ #
+#                          Obj\GenericApp.r51                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\GenericApp\Source\GenericApp.c
+      1          #include "OSAL.h"
+      2          #include "AF.h"
+      3          #include "ZDApp.h"
+      4          #include "ZDObject.h"
+      5          #include "ZDProfile.h"
+      6          #include <string.h>
+      7          #include "Coordinator.h"
+      8          #include "DebugTrace.h"
+      9          
+     10          #if !defined( WIN32 )
+     11            #include "OnBoard.h"
+     12          #endif
+     13          
+     14          #include "hal_lcd.h"
+     15          #include "hal_led.h"
+     16          #include "hal_key.h"
+     17          #include "hal_uart.h"
+     18          
+     19          /* RTOS */
+     20          #if defined( IAR_ARMCM3_LM )
+     21          #include "RTOS_App.h"
+     22          #endif  
+     23          
+     24          
+     25          const cId_t GenericApp_ClusterList[GENERICAPP_MAX_CLUSTERS] =
+     26          {
+     27            GENERICAPP_CLUSTERID
+     28          };
+     29          
+     30          const SimpleDescriptionFormat_t GenericApp_SimpleDesc =
+     31          {
+     32            GENERICAPP_ENDPOINT,              //  int Endpoint;
+     33            GENERICAPP_PROFID,                //  uint16 AppProfId[2];
+     34            GENERICAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+     35            GENERICAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+     36            GENERICAPP_FLAGS,                 //  int   AppFlags:4;
+     37            GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+     38            (cId_t *)GenericApp_ClusterList,  //  byte *pAppInClusterList;
+     39            GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+     40            (cId_t *)GenericApp_ClusterList   //  byte *pAppInClusterList;
+     41          };
+     42          
+     43          
+     44          endPointDesc_t GenericApp_epDesc;
+     45          
+     46          
+     47          byte GenericApp_TaskID;   // Task ID for internal task/event processing
+     48                                    // This variable will be received when
+     49                                    // GenericApp_Init() is called.
+     50          devStates_t GenericApp_NwkState;
+     51          
+     52          
+     53          byte GenericApp_TransID;  // This is the unique message ID (counter)
+     54          
+     55          afAddrType_t GenericApp_DstAddr;
+     56          
+     57          /*********************************************************************
+     58           * LOCAL FUNCTIONS
+     59           */
+     60          static void GenericApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+     61          static void GenericApp_HandleKeys( byte shift, byte keys );
+     62          static void GenericApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+     63          static void GenericApp_SendTheMessage( void );
+     64          
+     65          #if defined( IAR_ARMCM3_LM )
+     66          static void GenericApp_ProcessRtosMessage( void );
+     67          #endif
+     68          
+     69          
+     70          void GenericApp_Init( uint8 task_id )
+     71          {
+     72            GenericApp_TaskID = task_id;
+     73            GenericApp_NwkState = DEV_INIT;
+     74            GenericApp_TransID = 0;
+     75          
+     76            
+     77            GenericApp_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+     78            GenericApp_DstAddr.endPoint = 0;
+     79            GenericApp_DstAddr.addr.shortAddr = 0;
+     80          
+     81            // Fill out the endpoint description.
+     82            GenericApp_epDesc.endPoint = GENERICAPP_ENDPOINT;
+     83            GenericApp_epDesc.task_id = &GenericApp_TaskID;
+     84            GenericApp_epDesc.simpleDesc
+     85                      = (SimpleDescriptionFormat_t *)&GenericApp_SimpleDesc;
+     86            GenericApp_epDesc.latencyReq = noLatencyReqs;
+     87          
+     88            // Register the endpoint description with the AF
+     89            afRegister( &GenericApp_epDesc );
+     90          
+     91            // Register for all key events - This app will handle all key events
+     92            RegisterForKeys( GenericApp_TaskID );
+     93          
+     94            // Update the display
+     95          #if defined ( LCD_SUPPORTED )
+     96            HalLcdWriteString( "GenericApp", HAL_LCD_LINE_1 );
+     97          #endif
+     98          
+     99            ZDO_RegisterForZDOMsg( GenericApp_TaskID, End_Device_Bind_rsp );
+    100            ZDO_RegisterForZDOMsg( GenericApp_TaskID, Match_Desc_rsp );
+    101          
+    102          #if defined( IAR_ARMCM3_LM )
+    103            // Register this task with RTOS task initiator
+    104            RTOS_RegisterApp( task_id, GENERICAPP_RTOS_MSG_EVT );
+    105          #endif
+    106          }
+    107          
+    108          /*********************************************************************
+    109           * @fn      GenericApp_ProcessEvent
+    110           *
+    111           * @brief   Generic Application Task event processor.  This function
+    112           *          is called to process all events for the task.  Events
+    113           *          include timers, messages and any other user defined events.
+    114           *
+    115           * @param   task_id  - The OSAL assigned task ID.
+    116           * @param   events - events to process.  This is a bit map and can
+    117           *                   contain more than one event.
+    118           *
+    119           * @return  none
+    120           */
+    121          uint16 GenericApp_ProcessEvent( uint8 task_id, uint16 events )
+    122          {
+    123            afIncomingMSGPacket_t *MSGpkt;
+    124            afDataConfirm_t *afDataConfirm;
+    125          
+    126            // Data Confirmation message fields
+    127            byte sentEP;
+    128            ZStatus_t sentStatus;
+    129            byte sentTransID;       // This should match the value sent
+    130            (void)task_id;  // Intentionally unreferenced parameter
+    131          
+    132            if ( events & SYS_EVENT_MSG )
+    133            {
+    134              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GenericApp_TaskID );
+    135              while ( MSGpkt )
+    136              {
+    137                switch ( MSGpkt->hdr.event )
+    138                {
+    139                  case ZDO_CB_MSG:
+    140                    GenericApp_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    141                    break;
+    142          
+    143                  case KEY_CHANGE:
+    144                    GenericApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    145                    break;
+    146          
+    147                  case AF_DATA_CONFIRM_CMD:
+    148                    // This message is received as a confirmation of a data packet sent.
+    149                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    150                    // The message fields are defined in AF.h
+    151                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    152                    sentEP = afDataConfirm->endpoint;
+    153                    sentStatus = afDataConfirm->hdr.status;
+    154                    sentTransID = afDataConfirm->transID;
+    155                    (void)sentEP;
+    156                    (void)sentTransID;
+    157          
+    158                    // Action taken when confirmation is received.
+    159                    if ( sentStatus != ZSuccess )
+    160                    {
+    161                      // The data wasn't delivered -- Do something
+    162                    }
+    163                    break;
+    164          
+    165                  case AF_INCOMING_MSG_CMD:
+    166                    GenericApp_MessageMSGCB( MSGpkt );
+    167                    break;
+    168          
+    169                  case ZDO_STATE_CHANGE:
+    170                    GenericApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+    171                    if ( (GenericApp_NwkState == DEV_ZB_COORD)
+    172                        || (GenericApp_NwkState == DEV_ROUTER)
+    173                        || (GenericApp_NwkState == DEV_END_DEVICE) )
+    174                    {
+    175                      // Start sending "the" message in a regular interval.
+    176                      osal_start_timerEx( GenericApp_TaskID,
+    177                                          GENERICAPP_SEND_MSG_EVT,
+                                                 ^
+Error[Pe020]: identifier "GENERICAPP_SEND_MSG_EVT" is undefined
+    178                                          GENERICAPP_SEND_MSG_TIMEOUT );
+                                                 ^
+Error[Pe020]: identifier "GENERICAPP_SEND_MSG_TIMEOUT" is undefined
+    179                    }
+    180                    break;
+    181          
+    182                  default:
+    183                    break;
+    184                }
+    185          
+    186                // Release the memory
+    187                osal_msg_deallocate( (uint8 *)MSGpkt );
+    188          
+    189                // Next
+    190                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GenericApp_TaskID );
+    191              }
+    192          
+    193              // return unprocessed events
+    194              return (events ^ SYS_EVENT_MSG);
+    195            }
+    196          
+    197            // Send a message out - This event is generated by a timer
+    198            //  (setup in GenericApp_Init()).
+    199            if ( events & GENERICAPP_SEND_MSG_EVT )
+                                 ^
+Error[Pe020]: identifier "GENERICAPP_SEND_MSG_EVT" is undefined
+    200            {
+    201              // Send "the" message
+    202              GenericApp_SendTheMessage();
+    203          
+    204              // Setup to send message again
+    205              osal_start_timerEx( GenericApp_TaskID,
+    206                                  GENERICAPP_SEND_MSG_EVT,
+    207                                  GENERICAPP_SEND_MSG_TIMEOUT );
+                                         ^
+Error[Pe020]: identifier "GENERICAPP_SEND_MSG_TIMEOUT" is undefined
+    208          
+    209              // return unprocessed events
+    210              return (events ^ GENERICAPP_SEND_MSG_EVT);
+    211            }
+    212          
+    213            
+    214          #if defined( IAR_ARMCM3_LM )
+    215            // Receive a message from the RTOS queue
+    216            if ( events & GENERICAPP_RTOS_MSG_EVT )
+    217            {
+    218              // Process message from RTOS queue
+    219              GenericApp_ProcessRtosMessage();
+    220          
+    221              // return unprocessed events
+    222              return (events ^ GENERICAPP_RTOS_MSG_EVT);
+    223            }
+    224          #endif
+    225          
+    226            // Discard unknown events
+    227            return 0;
+    228          }
+    229          
+    230          /*********************************************************************
+    231           * Event Generation Functions
+    232           */
+    233          
+    234          /*********************************************************************
+    235           * @fn      GenericApp_ProcessZDOMsgs()
+    236           *
+    237           * @brief   Process response messages
+    238           *
+    239           * @param   none
+    240           *
+    241           * @return  none
+    242           */
+    243          static void GenericApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    244          {
+    245            switch ( inMsg->clusterID )
+    246            {
+    247              case End_Device_Bind_rsp:
+    248                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    249                {
+    250                  // Light LED
+    251                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    252                }
+    253          #if defined( BLINK_LEDS )
+    254                else
+    255                {
+    256                  // Flash LED to show failure
+    257                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+    258                }
+    259          #endif
+    260                break;
+    261          
+    262              case Match_Desc_rsp:
+    263                {
+    264                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+    265                  if ( pRsp )
+    266                  {
+    267                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+    268                    {
+    269                      GenericApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+    270                      GenericApp_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+    271                      // Take the first endpoint, Can be changed to search through endpoints
+    272                      GenericApp_DstAddr.endPoint = pRsp->epList[0];
+    273          
+    274                      // Light LED
+    275                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    276                    }
+    277                    osal_mem_free( pRsp );
+    278                  }
+    279                }
+    280                break;
+    281            }
+    282          }
+    283          
+    284          /*********************************************************************
+    285           * @fn      GenericApp_HandleKeys
+    286           *
+    287           * @brief   Handles all key events for this device.
+    288           *
+    289           * @param   shift - true if in shift/alt.
+    290           * @param   keys - bit field for key events. Valid entries:
+    291           *                 HAL_KEY_SW_4
+    292           *                 HAL_KEY_SW_3
+    293           *                 HAL_KEY_SW_2
+    294           *                 HAL_KEY_SW_1
+    295           *
+    296           * @return  none
+    297           */
+    298          static void GenericApp_HandleKeys( uint8 shift, uint8 keys )
+    299          {
+    300            zAddrType_t dstAddr;
+    301          
+    302            // Shift is used to make each button/switch dual purpose.
+    303            if ( shift )
+    304            {
+    305              if ( keys & HAL_KEY_SW_1 )
+    306              {
+    307              }
+    308              if ( keys & HAL_KEY_SW_2 )
+    309              {
+    310              }
+    311              if ( keys & HAL_KEY_SW_3 )
+    312              {
+    313              }
+    314              if ( keys & HAL_KEY_SW_4 )
+    315              {
+    316              }
+    317            }
+    318            else
+    319            {
+    320              if ( keys & HAL_KEY_SW_1 )
+    321              {
+    322                // Since SW1 isn't used for anything else in this application...
+    323          #if defined( SWITCH1_BIND )
+    324                // we can use SW1 to simulate SW2 for devices that only have one switch,
+    325                keys |= HAL_KEY_SW_2;
+    326          #elif defined( SWITCH1_MATCH )
+    327                // or use SW1 to simulate SW4 for devices that only have one switch
+    328                keys |= HAL_KEY_SW_4;
+    329          #endif
+    330              }
+    331          
+    332              if ( keys & HAL_KEY_SW_2 )
+    333              {
+    334                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    335          
+    336                // Initiate an End Device Bind Request for the mandatory endpoint
+    337                dstAddr.addrMode = Addr16Bit;
+    338                dstAddr.addr.shortAddr = 0x0000; // Coordinator
+    339                ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    340                                      GenericApp_epDesc.endPoint,
+    341                                      GENERICAPP_PROFID,
+    342                                      GENERICAPP_MAX_CLUSTERS, (cId_t *)GenericApp_ClusterList,
+    343                                      GENERICAPP_MAX_CLUSTERS, (cId_t *)GenericApp_ClusterList,
+    344                                      FALSE );
+    345              }
+    346          
+    347              if ( keys & HAL_KEY_SW_3 )
+    348              {
+    349              }
+    350          
+    351              if ( keys & HAL_KEY_SW_4 )
+    352              {
+    353                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    354                // Initiate a Match Description Request (Service Discovery)
+    355                dstAddr.addrMode = AddrBroadcast;
+    356                dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+    357                ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    358                                  GENERICAPP_PROFID,
+    359                                  GENERICAPP_MAX_CLUSTERS, (cId_t *)GenericApp_ClusterList,
+    360                                  GENERICAPP_MAX_CLUSTERS, (cId_t *)GenericApp_ClusterList,
+    361                                  FALSE );
+    362              }
+    363            }
+    364          }
+    365          
+    366          /*********************************************************************
+    367           * LOCAL FUNCTIONS
+    368           */
+    369          
+    370          /*********************************************************************
+    371           * @fn      GenericApp_MessageMSGCB
+    372           *
+    373           * @brief   Data message processor callback.  This function processes
+    374           *          any incoming data - probably from other devices.  So, based
+    375           *          on cluster ID, perform the intended action.
+    376           *
+    377           * @param   none
+    378           *
+    379           * @return  none
+    380           */
+    381          static void GenericApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+    382          {
+    383            switch ( pkt->clusterId )
+    384            {
+    385              case GENERICAPP_CLUSTERID:
+    386                // "the" message
+    387          #if defined( LCD_SUPPORTED )
+    388                HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+    389          #elif defined( WIN32 )
+    390                WPRINTSTR( pkt->cmd.Data );
+    391          #endif
+    392                break;
+    393            }
+    394          }
+    395          
+    396          /*********************************************************************
+    397           * @fn      GenericApp_SendTheMessage
+    398           *
+    399           * @brief   Send "the" message.
+    400           *
+    401           * @param   none
+    402           *
+    403           * @return  none
+    404           */
+    405          static void GenericApp_SendTheMessage( void )
+    406          {
+    407            char theMessageData[] = "Hello World";
+    408          
+    409            if ( AF_DataRequest( &GenericApp_DstAddr, &GenericApp_epDesc,
+    410                                 GENERICAPP_CLUSTERID,
+    411                                 (byte)osal_strlen( theMessageData ) + 1,
+    412                                 (byte *)&theMessageData,
+    413                                 &GenericApp_TransID,
+    414                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+    415            {
+    416              // Successfully requested to be sent.
+    417            }
+    418            else
+    419            {
+    420              // Error occurred in request to send.
+    421            }
+    422          }
+    423          
+    424          #if defined( IAR_ARMCM3_LM )
+    425          /*********************************************************************
+    426           * @fn      GenericApp_ProcessRtosMessage
+    427           *
+    428           * @brief   Receive message from RTOS queue, send response back.
+    429           *
+    430           * @param   none
+    431           *
+    432           * @return  none
+    433           */
+    434          static void GenericApp_ProcessRtosMessage( void )
+    435          {
+    436            osalQueue_t inMsg;
+    437          
+    438            if ( osal_queue_receive( OsalQueue, &inMsg, 0 ) == pdPASS )
+    439            {
+    440              uint8 cmndId = inMsg.cmnd;
+    441              uint32 counter = osal_build_uint32( inMsg.cbuf, 4 );
+    442          
+    443              switch ( cmndId )
+    444              {
+    445                case CMD_INCR:
+    446                  counter += 1;  /* Increment the incoming counter */
+    447                                 /* Intentionally fall through next case */
+    448          
+    449                case CMD_ECHO:
+    450                {
+    451                  userQueue_t outMsg;
+    452          
+    453                  outMsg.resp = RSP_CODE | cmndId;  /* Response ID */
+    454                  osal_buffer_uint32( outMsg.rbuf, counter );    /* Increment counter */
+    455                  osal_queue_send( UserQueue1, &outMsg, 0 );  /* Send back to UserTask */
+    456                  break;
+    457                }
+    458                
+    459                default:
+    460                  break;  /* Ignore unknown command */    
+    461              }
+    462            }
+    463          }
+    464          #endif
+    465          
+    466          /*********************************************************************
+    467           */
+
+Errors: 4
+Warnings: none

@@ -1,0 +1,340 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         28/Jul/2014  07:06:52 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SampleApp\Source\ds18b20.c         #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wCoord.cfg" (-DCPU32MHZ             #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO           #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\Source\ds18b20.c" -D              #
+#                          BUILD_ALL_DEVICES -D HOLD_AUTO_START -D            #
+#                          LCD_SUPPORTED -D HAL_UART=FALSE -lC "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\DemoEB\List\" -lA        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\DemoEB\List\"  #
+#                          --diag_suppress Pe001,Pa010 -o "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\DemoEB\Obj\" -e          #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\Source\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ZM #
+#                          ain\TI2530DB\" -I "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\hal\include\" -I "C:\Texas                       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\hal\target\CC2530EB\" -I "C:\Texas               #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\include\" -I "C:\Texas                       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\high_level\" -I "C:\Texas                    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\" -I "C:\Texas               #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\single_chip\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5. #
+#                          1a\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\..\..\Components\osal\include\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\" -I "C:\Texas                    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\sdata\" -I "C:\Texas                    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\af\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\nwk\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\sapi\" -I "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\sec\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\sys\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\zdo\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2. #
+#                          5.1a\Projects\zstack\Samples\SampleApp\CC2530DB\.. #
+#                          \..\..\..\..\Components\zmac\f8w\" -Ohz            #
+#                          --require_prototypes                               #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\DemoEB\List\ds1 #
+#                          8b20.lst                                           #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\DemoEB\Obj\ds18 #
+#                          b20.r51                                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\SampleApp\Source\ds18b20.c
+      1          #include"iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0xb4
+   \   unsigned char volatile __sfr ADCCON1
+   \                     ADCCON1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb6
+   \   unsigned char volatile __sfr ADCCON3
+   \                     ADCCON3:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xba
+   \   unsigned char volatile __sfr ADCL
+   \                     ADCL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbb
+   \   unsigned char volatile __sfr ADCH
+   \                     ADCH:
+   \   000000                DS 1
+      2          #include"OnBoard.h"
+      3          
+      4          #define uint unsigned int 
+      5          #define uchar unsigned char
+      6          
+      7           
+      8          
+      9           
+     10          
+     11          #define ON 0x01  //读取成功返回0x00，失败返回0x01
+     12          #define OFF 0x00
+     13          
+     14          
+     15          //unsigned char temp; //储存pH信息
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     16          float AvgTemp;
+   \                     AvgTemp:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+     17          
+     18          void pHDelay(uint k);
+     19          float getpH(void);
+     20          //void InitUART0(void);
+     21          
+     22          //时钟频率为32M
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          void pHDelay(uint k)
+   \                     pHDelay:
+     24          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     25           /* uint i,j;
+     26            for(i=0;i<k;i++)
+     27            for(j=0;j<2;j++);*/
+     28            MicroWait(k);
+   \   000004                ; Setup parameters for call to function Onboard_wait
+   \   000004   12....       LCALL   ??Onboard_wait?relay
+     29          
+     30          }
+   \   000007   D083         POP     DPH
+   \   000009   D082         POP     DPL
+   \   00000B   02....       LJMP    ?BRET
+     31          
+     32          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          float getpH(void){
+   \                     getpH:
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+     34            short int i;
+     35            int AdcValue;
+     36           int value;
+     37          
+     38            AdcValue = 0;
+   \   000005   75..00       MOV     ?V0 + 0,#0x0
+   \   000008   75..00       MOV     ?V0 + 1,#0x0
+     39            for( i = 0; i < 4; i++ )
+   \   00000B   7C04         MOV     R4,#0x4
+     40            {
+     41              ADCCON3 = 0x70;
+   \                     ??getpH_0:
+   \   00000D   75B670       MOV     0xb6,#0x70
+     42              ADCCON1 |= 0x30;
+   \   000010   43B430       ORL     0xb4,#0x30
+     43              ADCCON1 |= 0x40; //开启单通道ADC
+   \   000013   43B440       ORL     0xb4,#0x40
+     44              while(!(ADCCON1 & 0x80)); //等待AD转换完成
+   \                     ??getpH_1:
+   \   000016   E5B4         MOV     A,0xb4
+   \   000018   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00001A   50FA         JNC     ??getpH_1
+     45              value = ADCL >> 4; //ADCL寄存器低2位无效
+   \   00001C   E5BA         MOV     A,0xba
+     46             value |= ADCH <<4; 
+     47              AdcValue += value; //AdcValue被赋值为4次AD值之和
+   \   00001E   C4           SWAP    A
+   \   00001F   540F         ANL     A,#0xf
+   \   000021   FA           MOV     R2,A
+   \   000022   85BB..       MOV     ?V0 + 2,0xbb
+   \   000025   75..00       MOV     ?V0 + 3,#0x0
+   \   000028   7404         MOV     A,#0x4
+   \   00002A   78..         MOV     R0,#?V0 + 2
+   \   00002C   12....       LCALL   ?S_SHL
+   \   00002F   EA           MOV     A,R2
+   \   000030   45..         ORL     A,?V0 + 2
+   \   000032   F8           MOV     R0,A
+   \   000033   A9..         MOV     R1,?V0 + 3
+   \   000035   E5..         MOV     A,?V0 + 0
+   \   000037   28           ADD     A,R0
+   \   000038   F5..         MOV     ?V0 + 0,A
+   \   00003A   E5..         MOV     A,?V0 + 1
+   \   00003C   39           ADDC    A,R1
+   \   00003D   F5..         MOV     ?V0 + 1,A
+     48            }
+   \   00003F   1C           DEC     R4
+   \   000040   EC           MOV     A,R4
+   \   000041   70CA         JNZ     ??getpH_0
+     49               value = AdcValue >> 2; //累加除以4，得到平均值
+     50            return value;
+   \   000043   7402         MOV     A,#0x2
+   \   000045   78..         MOV     R0,#?V0 + 0
+   \   000047   12....       LCALL   ?SS_SHR
+   \   00004A   E5..         MOV     A,?V0 + 1
+   \   00004C   33           RLC     A
+   \   00004D   95E0         SUBB    A,0xE0 /* A   */
+   \   00004F   F5..         MOV     ?V0 + 2,A
+   \   000051   F5..         MOV     ?V0 + 3,A
+   \   000053   78..         MOV     R0,#?V0 + 0
+   \   000055   12....       LCALL   ?L_TO_FLT
+   \   000058   AA..         MOV     R2,?V0 + 0
+   \   00005A   AB..         MOV     R3,?V0 + 1
+   \   00005C   AC..         MOV     R4,?V0 + 2
+   \   00005E   AD..         MOV     R5,?V0 + 3
+   \   000060   7F04         MOV     R7,#0x4
+   \   000062   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000065                REQUIRE ADCCON3
+   \   000065                REQUIRE ADCCON1
+   \   000065                REQUIRE ADCL
+   \   000065                REQUIRE ADCH
+     51          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??pHDelay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    pHDelay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??getpH?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    getpH
+     52          /*void InitUART0(void)
+     53          {
+     54               PERCFG = 0x00; //位置1 P0口
+     55               P0SEL = 0x3c; //P0用作串口
+     56               
+     57               P2DIR &= ~0XC0; //P0优先作为UART0 
+     58                  U0CSR |= 0x80; //串口设置为UART方式
+     59                  U0GCR |= 9; 
+     60                  U0BAUD |= 59; //波特率设为19200
+     61          
+     62               UTX0IF = 1; //UART0 TX中断标志初始置位1 
+     63                  U0CSR |= 0X40; //允许接收
+     64                  IEN0 |= 0x84; //开总中断，接收中断
+     65          
+     66          }*/
+
+   Maximum stack usage in bytes:
+
+     Function          ISTACK PSTACK XSTACK
+     --------          ------ ------ ------
+     getpH                 0      0     12
+     pHDelay               2      0      0
+       -> Onboard_wait     4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label  Bytes
+     --------------  -----
+     ADCCON1            1
+     ADCCON3            1
+     ADCL               1
+     ADCH               1
+     AvgTemp            4
+     pHDelay           14
+     getpH            101
+     ??pHDelay?relay    6
+     ??getpH?relay      6
+
+ 
+ 115 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+   4 bytes in segment XDATA_Z
+ 
+ 127 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 4 bytes shared)
+   4 bytes of XDATA memory
+
+Errors: none
+Warnings: none
