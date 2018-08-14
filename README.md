@@ -9,3 +9,4 @@ Routers and Coordinator, established working frequency 2.4GHz global wireless se
 undertake data collection and transmission. In Windows 8.1 with Updated1 pro and IAR environment, 
 write and compile the sensor nodes, router and coordinator node program. Besides, through the contact 
 and understanding of server, realized the real-time remote monitoring of the soil pH.
+The core source code at: ./zstack/Samples/GenericApp/Source/
